@@ -740,4 +740,8 @@ body {
     border: 3px solid #07374a;
     border-radius: 0.6rem;
   }
+  .card-img-top{
+    height: 18rem;
+    width: 98rem;
+  }
 }
