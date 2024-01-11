@@ -387,6 +387,38 @@ body {
 .proj .proj-details button:hover .fas {
   color: #f0f0e6;
 }
+.view-source-buton {
+  background: #f0f0e6;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  width: 150px;
+  border: none;
+  border-bottom: 2px solid #07374a;
+}
+
+.view-source-buton a {
+  text-decoration: none;
+  color: #07374a;
+  font-size: 1.1rem;
+  transition: 0.2s ease-in-out;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+}
+
+.view-source-buton .fas {
+  font-size: 0.7rem;
+  padding: 0.3rem;
+  transition: 0.2s ease-in-out;
+}
+
+.view-source-buton:hover {
+  background: #07374a;
+}
+
+.view-source-buton:hover a,
+.view-source-buton:hover .fas {
+  color: #f0f0e6;
+}
 
 .more-work {
   text-align: center;
@@ -662,4 +694,36 @@ body {
   font-size: 1.1rem;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.col {
+  margin-left: 2rem;
+  margin-top: 2rem;
+  border: 3px solid #07374a;
+  border-radius: 0.6rem;
+}
+
+.card-body {
+  background-color: #25b79f;
+}
+.card-body-btn {
+  background-color: #25b79f;
+  text-align: center;
+}
+
+.rows {
+  display: grid;
+  grid-template-columns: 31% 31% 31%;
+  gap: 2rem;
+}
+.badge {
+  right: -9% !important;
+}
+.tech-stack{
+  color: #07374a;
+  font-size: 1.1rem;
+  font-weight: bolder;
+}
+.card-img-top{
+  height: 14rem;
 }
