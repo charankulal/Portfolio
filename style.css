@@ -655,6 +655,7 @@ body {
   }
 }
 
+
 .more-proj {
   text-align: center;
 }
@@ -697,8 +698,8 @@ body {
 }
 
 .col {
-  margin-left: 2rem;
-  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
   border: 3px solid #07374a;
   border-radius: 0.6rem;
 }
@@ -726,4 +727,11 @@ body {
 }
 .card-img-top{
   height: 14rem;
+}
+@media (max-width: 769px) {
+  .rows {
+    display: grid;
+  grid-template-columns: 100%;
+  gap: 2rem;
+  }
 }
