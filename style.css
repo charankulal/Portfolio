@@ -10,7 +10,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-header {
+.header {
   background-color: #25b79f;
   height: 100vh;
 }
@@ -51,13 +51,9 @@ header {
 }
 
 .menu-items a:hover {
-  border-bottom: 2px solid #f0f0e6;
-}
-
-.navbar .logo {
-  order: 1;
-  color: #f0f0e6;
-  font-size: 2rem;
+  border-bottom: 2px solid #07374a;
+  font-size: 1.3rem;
+  color: #07374a;
 }
 
 .home-content .name {
@@ -91,6 +87,21 @@ header {
 }
 
 .angle-down-icon a {
+  text-decoration: none;
+  color: #07374a;
+  padding: 1rem;
+}
+.angle-down-icon-proj {
+  position: absolute;
+  bottom: 9%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  border: 3px solid #07374a;
+  border-radius: 50%;
+}
+
+.angle-down-icon-proj a {
   text-decoration: none;
   color: #07374a;
   padding: 1rem;
@@ -267,23 +278,9 @@ header {
   content: "30%";
 }
 
-.navbar.solid {
-  background-color: #07374a;
-  transition: background-color 1s ease 0s;
-  box-shadow: 0 0 4px rgb(7 55 74 / 20%);
-  z-index: 500;
-}
-
-.navbar.solid .navbar-brand {
-  display: inline-block;
+.navbar-brand {
   color: #f0f0e6;
   transition: color 1s ease 0s;
-}
-
-.navbar-brand {
-  display: none;
-  color: #f0f0e6;
-  font-weight: 400;
 }
 
 .work-arrow {
@@ -626,23 +623,43 @@ header {
   }
 }
 
-
-.more-proj{
+.more-proj {
   text-align: center;
 }
 
-.btn-primary{
+.btn-primary {
   background-color: #fff !important;
   color: #07374a !important;
-  
 }
-.btn-primary:hover{
+.btn-primary:hover {
   background-color: #07374a !important;
-  color: #fff  !important;
+  color: #fff !important;
 }
-.btn-primary span{
-  font-size: 1.1rem ;
+.btn-primary span {
+  font-size: 1.1rem;
 }
-.btn-primary span:hover{
-  font-size: 1.3rem ;
+.btn-primary span:hover {
+  font-size: 1.3rem;
+}
+
+.header-project {
+  background-color: #25b79f;
+  height: 100vh;
+}
+
+.proj-head {
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 3rem;
+  font-weight: bolder;
+}
+
+.proj-desc {
+  margin-top: 7%;
+  width: 70%;
+  margin-left: 15%;
+  text-justify: distribute;
+  font-size: 1.1rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
