@@ -731,7 +731,7 @@ body {
 @media (max-width: 769px) {
   .rows {
     display: grid;
-  grid-template-columns: 70%;
+  grid-template-columns: 100%;
   gap: 2rem;
   margin-left:15% ;
   margin-right:15% ;
