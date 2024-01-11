@@ -734,4 +734,10 @@ body {
   grid-template-columns: 100%;
   gap: 2rem;
   }
+  .col {
+    margin-left: 0rem;
+    margin-top: 0rem;
+    border: 3px solid #07374a;
+    border-radius: 0.6rem;
+  }
 }
