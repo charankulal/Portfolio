@@ -209,13 +209,13 @@ body {
   width: 70%;
 }
 .progress-line .python {
-  width: 60%;
+  width: 80%;
 }
 .progress-line .javascript {
   width: 80%;
 }
 .progress-line .c {
-  width: 50%;
+  width: 90%;
 }
 .progress-line .java {
   width: 80%;
@@ -223,9 +223,7 @@ body {
 .progress-line .sql {
   width: 90%;
 }
-.progress-line .php {
-  width: 30%;
-}
+
 
 .bar .progress-line span::before {
   position: absolute;
@@ -263,20 +261,18 @@ body {
   content: "70%";
 }
 .progress-line .python::after {
-  content: "60%";
+  content: "80%";
 }
 .progress-line .javascript::after {
   content: "80%";
 }
 .progress-line .c::after {
-  content: "50%";
+  content: "90%";
 }
 .progress-line .java::after {
   content: "80%";
 }
-.progress-line .php::after {
-  content: "30%";
-}
+
 
 .navbar-brand {
   color: #f0f0e6;
@@ -752,4 +748,11 @@ body {
   .navbar-brand{
     display: none;
   }
+  .accomplishment{
+    margin-top: 10%;
+    margin-left: 30%;
+  }
+}
+.accomplishment{
+  margin-top: 10%;
 }
