@@ -4,12 +4,39 @@ $(document).ready(function () {
     // checks if window is scrolled more than 500px, adds/removes solid class
     if ($(this).scrollTop() > 550) {
       $(".navbar").addClass("solid");
-      $(".back-to-top").addClass("visible");
+      $("#backToTop").addClass("visible");
     } else {
       $(".navbar").removeClass("solid");
-      $(".back-to-top").removeClass("visible");
+      $("#backToTop").removeClass("visible");
     }
   });
+
+  // Back to top button click handler
+  $("#backToTop").on("click", function () {
+    $("html, body").animate(
+      {
+        scrollTop: 0,
+      },
+      600
+    );
+  });
+
+  // Animate elements on scroll
+  function animateOnScroll() {
+    $(".proj, .bar, .cert-badge, .stat-item").each(function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      if (elementBottom > viewportTop && elementTop < viewportBottom) {
+        $(this).addClass("animate-in");
+      }
+    });
+  }
+
+  $(window).on("scroll", animateOnScroll);
+  animateOnScroll(); // Run on page load
 });
 
 $(document).ready(function () {
@@ -41,15 +68,18 @@ $(document).ready(function () {
 
 const typed = new Typed(".text", {
   strings: [
-    "Engineer",
-    "Full Stack developer",
+    "Polyglot Developer",
+    "Junior QA Tester @ EG India",
+    "Full Stack Developer",
+    "ISTQB® Certified Tester",
     "Android Developer",
-    "Software developer",
+    "React Native Enthusiast",
+    "AI Enthusiast",
+    "Open Source Contributor",
     "UI/UX Designer",
-    
   ],
   typeSpeed: 100,
   backSpeed: 50,
-  backDelay: 10,
+  backDelay: 1000,
   loop: true
 });
