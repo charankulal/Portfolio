@@ -35,8 +35,61 @@ $(document).ready(function () {
     });
   }
 
-  $(window).on("scroll", animateOnScroll);
+  // Animated counter for stats
+  let counterAnimated = false;
+
+  function animateCounters() {
+    if (counterAnimated) return;
+
+    $(".stat-number").each(function () {
+      const $this = $(this);
+      const target = parseInt($this.attr("data-target"));
+
+      if (target && !$this.hasClass("counted")) {
+        $this.addClass("counted");
+        const duration = 2000; // 2 seconds
+        const steps = 60;
+        const increment = target / steps;
+        let current = 0;
+        const stepDuration = duration / steps;
+
+        const counter = setInterval(function () {
+          current += increment;
+          if (current >= target) {
+            $this.text(target);
+            clearInterval(counter);
+          } else {
+            $this.text(Math.floor(current));
+          }
+        }, stepDuration);
+      }
+    });
+
+    counterAnimated = true;
+  }
+
+  // Check if stats section is in viewport
+  function checkStatsInView() {
+    const statsSection = $(".achievements-stats-container");
+    if (statsSection.length) {
+      const elementTop = statsSection.offset().top;
+      const elementBottom = elementTop + statsSection.outerHeight();
+      const viewportTop = $(window).scrollTop();
+      const viewportBottom = viewportTop + $(window).height();
+
+      if (elementBottom > viewportTop && elementTop < viewportBottom) {
+        animateCounters();
+      }
+    }
+  }
+
+  $(window).on("scroll", function () {
+    animateOnScroll();
+    checkStatsInView();
+  });
+
   animateOnScroll(); // Run on page load
+  checkStatsInView(); // Check stats on page load
 });
 
 $(document).ready(function () {
@@ -68,15 +121,10 @@ $(document).ready(function () {
 
 const typed = new Typed(".text", {
   strings: [
-    "Polyglot Developer",
     "Junior QA Tester @ EG India",
-    "Full Stack Developer",
+    "Software Engineer",
     "ISTQB® Certified Tester",
-    "Android Developer",
-    "React Native Enthusiast",
     "AI Enthusiast",
-    "Open Source Contributor",
-    "UI/UX Designer",
   ],
   typeSpeed: 100,
   backSpeed: 50,
