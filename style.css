@@ -3541,4 +3541,196 @@ a {
 }
 .accomplishment{
   margin-top: 10%;
+}/* Resume Modal Styles */
+.resume-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  animation: fadeIn 0.3s ease;
+  overflow: hidden;
+}
+
+.resume-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-modal-content {
+  background-color: var(--card-bg);
+  width: 95%;
+  max-width: 1200px;
+  height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  animation: slideInDown 0.4s ease;
+  overflow: hidden;
+}
+
+.resume-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: var(--text-light);
+  border-bottom: 2px solid var(--primary-dark);
+}
+
+.resume-modal-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.resume-modal-header h2 i {
+  font-size: 1.8rem;
+}
+
+.resume-modal-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-download-resume {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-light);
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-download-resume:hover {
+  background-color: var(--text-light);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.resume-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: var(--text-light);
+  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-close:hover {
+  background-color: #ff4444;
+  border-color: #ff4444;
+  transform: rotate(90deg);
+}
+
+.resume-modal-body {
+  flex: 1;
+  padding: 1.5rem;
+  background-color: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.resume-modal-body iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--bg-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsive for Resume Modal */
+@media (max-width: 768px) {
+  .resume-modal-content {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .resume-modal-header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .resume-modal-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .resume-modal-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btn-download-resume {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .resume-close {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .resume-modal-body {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .resume-modal-header h2 {
+    font-size: 1rem;
+  }
+
+  .btn-download-resume span {
+    display: none;
+  }
+
+  .btn-download-resume {
+    padding: 0.5rem 0.75rem;
+  }
 }

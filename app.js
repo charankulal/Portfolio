@@ -191,3 +191,39 @@ $(document).ready(function () {
     }
   });
 });
+
+// Resume Modal Functionality
+$(document).ready(function () {
+  const resumeModal = $("#resumeModal");
+  const resumeLink = $("#resumeLink");
+  const closeResumeModal = $("#closeResumeModal");
+
+  // Open resume modal
+  resumeLink.on("click", function (e) {
+    e.preventDefault();
+    resumeModal.addClass("active");
+    $("body").css("overflow", "hidden");
+  });
+
+  // Close resume modal
+  closeResumeModal.on("click", function () {
+    resumeModal.removeClass("active");
+    $("body").css("overflow", "auto");
+  });
+
+  // Close modal when clicking outside
+  resumeModal.on("click", function (e) {
+    if ($(e.target).is(resumeModal)) {
+      resumeModal.removeClass("active");
+      $("body").css("overflow", "auto");
+    }
+  });
+
+  // Close modal with Escape key
+  $(document).on("keydown", function (e) {
+    if (e.key === "Escape" && resumeModal.hasClass("active")) {
+      resumeModal.removeClass("active");
+      $("body").css("overflow", "auto");
+    }
+  });
+});

@@ -46,6 +46,7 @@
               <li><a href="#about">About</a></li>
               <li><a href="#my-works">Portfolio</a></li>
               <li><a href="./project_page.html">All Projects</a></li>
+              <li><a href="#" id="resumeLink"><i class="fas fa-file-alt"></i><span>Resume</span></a></li>
               <li><a href="#contact-me">Contact</a></li>
               <li>
                 <a href="https://github.com/charankulal" target="_blank"
@@ -487,6 +488,26 @@
         </div>
       </div>
     </div>
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="resume-modal">
+      <div class="resume-modal-content">
+        <div class="resume-modal-header">
+          <h2><i class="fas fa-file-alt"></i> My Resume</h2>
+          <div class="resume-modal-actions">
+            <a href="Charan_K Resume.pdf" download="Charan_K_Resume.pdf" class="btn-download-resume">
+              <i class="fas fa-download"></i> Download PDF
+            </a>
+            <button class="resume-close" id="closeResumeModal">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="resume-modal-body">
+          <iframe id="resumeViewer" src="Charan_K Resume.pdf" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" title="Go to top">
       <i class="fas fa-arrow-up"></i>
