@@ -33,25 +33,35 @@
     <header class="header">
       <nav class="navbar">
         <div class="navbar-container container">
-          <div>
-            <h1 class="navbar-brand">My Portfolio</h1>
+          <div class="navbar-left">
+            <a href="#home-page" class="navbar-brand">Charan K</a>
           </div>
-          <ul class="menu-items">
-            <li><a href="#about">About</a></li>
-            <li><a href="#my-works">Portfolio</a></li>
-            <li><a href="./project_page.html">All Projects</a></li>
-            <li><a href="#contact-me">Contact</a></li>
-            <li>
-              <a href="https://github.com/charankulal" target="_blank"
-                ><i class="fab fa-github"></i> GitHub</a
-              >
-            </li>
-            <li>
-              <a href="https://solutionsbycherry.blogspot.com/" target="_blank"
-                ><i class="fas fa-blog"></i> Blog</a
-              >
-            </li>
-          </ul>
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="navbar-right">
+            <ul class="menu-items">
+              <li><a href="#about">About</a></li>
+              <li><a href="#my-works">Portfolio</a></li>
+              <li><a href="./project_page.html">All Projects</a></li>
+              <li><a href="#contact-me">Contact</a></li>
+              <li>
+                <a href="https://github.com/charankulal" target="_blank"
+                  ><i class="fab fa-github"></i><span>GitHub</span></a
+                >
+              </li>
+              <li>
+                <a href="https://solutionsbycherry.blogspot.com/" target="_blank"
+                  ><i class="fas fa-blog"></i><span>Blog</span></a
+                >
+              </li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
         </div>
       </nav>
       <div class="home-content" id="home-page">
@@ -76,17 +86,10 @@
               alt="Charan K - Profile Picture"
             />
             <p>
-              I'm a passionate Software Engineer from Mangaluru, India, with a
-              B.E. in Computer Science & Engineering. Currently working as a
-              Junior QA Tester at EG India (EGDK), I'm an ISTQB® Certified
-              Tester specializing in full-stack development and modern
-              technologies.
-            </p>
-            <p>
-              Proficient in Java Spring Boot, Python Django, MERN stack, React
-              Native, and TypeScript. Active open-source contributor with 83+
-              repositories and internship experience at Persistent Systems and
-              Vraio Software Solutions.
+              Software Engineer from Mangaluru with B.E. in Computer Science. Currently a Junior QA Tester
+              at EG India and ISTQB® Certified Tester. Proficient in Python Django, MERN stack, Flutter,
+              and Angular. Active open-source contributor with 83+ repositories and internship experience
+              at Persistent Systems and Vraio Software Solutions.
             </p>
           </div>
           <div class="skills">
@@ -97,14 +100,6 @@
               <div class="skills-bar">
                 <div class="bar">
                   <div class="info">
-                    <span>Java & Spring Boot</span>
-                  </div>
-                  <div class="progress-line">
-                    <span class="java"></span>
-                  </div>
-                </div>
-                <div class="bar">
-                  <div class="info">
                     <span>Python & Django</span>
                   </div>
                   <div class="progress-line">
@@ -113,15 +108,7 @@
                 </div>
                 <div class="bar">
                   <div class="info">
-                    <span>JavaScript & TypeScript</span>
-                  </div>
-                  <div class="progress-line">
-                    <span class="javascript"></span>
-                  </div>
-                </div>
-                <div class="bar">
-                  <div class="info">
-                    <span>React & Next.js</span>
+                    <span>MERN Stack</span>
                   </div>
                   <div class="progress-line">
                     <span class="react"></span>
@@ -129,18 +116,18 @@
                 </div>
                 <div class="bar">
                   <div class="info">
-                    <span>React Native</span>
+                    <span>Angular</span>
                   </div>
                   <div class="progress-line">
-                    <span class="reactnative"></span>
+                    <span class="angular"></span>
                   </div>
                 </div>
                 <div class="bar">
                   <div class="info">
-                    <span>Node.js & Express</span>
+                    <span>Flutter & Dart</span>
                   </div>
                   <div class="progress-line">
-                    <span class="nodejs"></span>
+                    <span class="flutter"></span>
                   </div>
                 </div>
                 <div class="bar">
@@ -149,14 +136,6 @@
                   </div>
                   <div class="progress-line">
                     <span class="sql"></span>
-                  </div>
-                </div>
-                <div class="bar">
-                  <div class="info">
-                    <span>HTML5 & CSS3</span>
-                  </div>
-                  <div class="progress-line">
-                    <span class="html"></span>
                   </div>
                 </div>
                 <div class="bar">
@@ -171,66 +150,98 @@
             </div>
           </div>
 
-          <div>
-            <div class="achievements-stats-container">
-              <!-- Certifications Card -->
-              <div class="achievement-card certifications-card">
-                <div class="card-header">
-                  <i class="fas fa-award"></i>
-                  <h3>Certifications & Achievements</h3>
+          <div class="achievements-wrapper">
+            <!-- Modern Achievements Section -->
+            <div class="achievements-modern-section">
+              <h2 class="section-title">Achievements & Recognition</h2>
+
+              <!-- GitHub Stats Showcase -->
+              <div class="github-stats-showcase">
+                <div class="stat-card">
+                  <div class="stat-card-inner">
+                    <div class="stat-icon-bg">
+                      <i class="fab fa-github"></i>
+                    </div>
+                    <div class="stat-details">
+                      <span class="stat-value" data-target="83">0</span>
+                      <span class="stat-title">Public Repositories</span>
+                      <span class="stat-subtitle">Open Source Projects</span>
+                    </div>
+                  </div>
                 </div>
-                <div class="cert-badges">
-                  <div class="cert-badge">
-                    <i class="fas fa-certificate"></i>
-                    <div class="cert-content">
-                      <span class="cert-title">ISTQB® Certified Tester</span>
-                      <span class="cert-type">Professional Certification</span>
+
+                <div class="stat-card">
+                  <div class="stat-card-inner">
+                    <div class="stat-icon-bg">
+                      <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-details">
+                      <span class="stat-value" data-target="80">0</span>
+                      <span class="stat-title">Followers</span>
+                      <span class="stat-subtitle">Growing Community</span>
                     </div>
                   </div>
-                  <div class="cert-badge">
-                    <i class="fas fa-code-branch"></i>
-                    <div class="cert-content">
-                      <span class="cert-title">Hacktoberfest 2023</span>
-                      <span class="cert-type">Open Source Contributor</span>
+                </div>
+
+                <div class="stat-card">
+                  <div class="stat-card-inner">
+                    <div class="stat-icon-bg">
+                      <i class="fas fa-code-branch"></i>
                     </div>
-                  </div>
-                  <div class="cert-badge">
-                    <i class="fas fa-trophy"></i>
-                    <div class="cert-content">
-                      <span class="cert-title">INSIGNIA 2k23</span>
-                      <span class="cert-type">Runner-up</span>
+                    <div class="stat-details">
+                      <span class="stat-value" data-target="150">0</span>
+                      <span class="stat-title">Contributions</span>
+                      <span class="stat-subtitle">This Year</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Stats Card -->
-              <div class="achievement-card stats-card">
-                <div class="card-header">
-                  <i class="fas fa-chart-line"></i>
-                  <h3>GitHub Stats</h3>
+              <!-- Certifications Grid -->
+              <div class="certifications-grid">
+                <div class="cert-card">
+                  <div class="cert-icon-wrapper">
+                    <i class="fas fa-certificate"></i>
+                  </div>
+                  <h4>ISTQB® Certified Tester</h4>
+                  <p>Foundation Level</p>
+                  <span class="cert-badge-tag">Professional Certification</span>
                 </div>
-                <div class="social-stats">
-                  <div class="stat-item">
-                    <div class="stat-icon-wrapper">
-                      <i class="fab fa-github"></i>
-                    </div>
-                    <span class="stat-number" data-target="83">0</span>
-                    <span class="stat-label">Repositories</span>
-                    <div class="stat-progress">
-                      <div class="stat-progress-bar" style="width: 83%"></div>
-                    </div>
+
+                <div class="cert-card">
+                  <div class="cert-icon-wrapper">
+                    <i class="fas fa-trophy"></i>
                   </div>
-                  <div class="stat-item">
-                    <div class="stat-icon-wrapper">
-                      <i class="fas fa-users"></i>
-                    </div>
-                    <span class="stat-number" data-target="80">0</span>
-                    <span class="stat-label">Followers</span>
-                    <div class="stat-progress">
-                      <div class="stat-progress-bar" style="width: 80%"></div>
-                    </div>
+                  <h4>INSIGNIA 2k23</h4>
+                  <p>Technical Competition</p>
+                  <span class="cert-badge-tag">Runner-up</span>
+                </div>
+
+                <div class="cert-card">
+                  <div class="cert-icon-wrapper">
+                    <i class="fas fa-code-branch"></i>
                   </div>
+                  <h4>Hacktoberfest 2023</h4>
+                  <p>Successfully Completed</p>
+                  <span class="cert-badge-tag">Open Source</span>
+                </div>
+
+                <div class="cert-card">
+                  <div class="cert-icon-wrapper">
+                    <i class="fas fa-code-branch"></i>
+                  </div>
+                  <h4>Hacktoberfest 2024</h4>
+                  <p>Successfully Completed</p>
+                  <span class="cert-badge-tag">Open Source</span>
+                </div>
+
+                <div class="cert-card">
+                  <div class="cert-icon-wrapper">
+                    <i class="fas fa-code-branch"></i>
+                  </div>
+                  <h4>Hacktoberfest 2025</h4>
+                  <p>Successfully Completed</p>
+                  <span class="cert-badge-tag">Open Source</span>
                 </div>
               </div>
             </div>
@@ -247,88 +258,160 @@
       </div>
     </section>
     <section id="my-works">
-      <div class="portfolio">
-        <div class="proj-heading">
-          <h1>Portfolio</h1>
-        </div>
-        <div class="portfolio-content container">
-          <div class="proj">
-            <img
-              src="https://github-readme-stats.vercel.app/api/pin/?username=charankulal&repo=Image-captioning-using-ViT&theme=radical"
-              alt="Image Captioning using Vision Transformer"
-            />
-            <div class="proj-details">
-              <i class="fas fa-robot"></i>
-              <i class="fab fa-python"></i>
-              <h2>Image Captioning with Vision Transformers</h2>
-              <p>
-                State-of-the-art AI: ViT encoder + Transformer decoder with
-                Flask web app, PyTorch 2.0+, user authentication & multiple
-                caption generation methods
-              </p>
-              <button>
+      <div class="portfolio-modern">
+        <div class="container">
+          <div class="portfolio-header">
+            <h1 class="portfolio-title">Featured Projects</h1>
+            <p class="portfolio-subtitle">Showcasing my best work in AI, Web Development, and Full-Stack Applications</p>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1: Image Captioning -->
+            <div class="project-card-modern">
+              <div class="project-icon-header">
+                <div class="icon-circle">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <div class="icon-circle">
+                  <i class="fab fa-python"></i>
+                </div>
+              </div>
+              <div class="project-content-modern">
+                <div class="project-category">AI/Deep Learning</div>
+                <h3>Image Captioning with Vision Transformers</h3>
+                <p>
+                  State-of-the-art AI system using ViT encoder + Transformer decoder with
+                  Flask web app, PyTorch 2.0+, user authentication & multiple
+                  caption generation methods
+                </p>
+                <div class="project-tech-tags">
+                  <span class="tech-tag-small">PyTorch</span>
+                  <span class="tech-tag-small">Flask</span>
+                  <span class="tech-tag-small">ViT</span>
+                  <span class="tech-tag-small">AI/ML</span>
+                </div>
                 <a
                   href="https://github.com/charankulal/Image-captioning-using-ViT"
-                  target="blank"
-                  >View source <i class="fas fa-external-link-alt"></i
-                ></a>
-              </button>
+                  target="_blank"
+                  class="project-link-modern"
+                >
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
             </div>
-          </div>
 
-          <div class="proj">
-            <img
-              src="https://github-readme-stats.vercel.app/api/pin/?username=charankulal&repo=Exam-Portal&theme=radical"
-              alt="Exam Portal"
-            />
-            <div class="proj-details">
-              <i class="fab fa-java"></i>
-              <i class="fab fa-angular"></i>
-              <h2>Exam Portal</h2>
-              <p>
-                Enterprise full-stack application: Spring Boot backend + Angular
-                frontend with robust authentication, quiz system & automated
-                marking (72 commits)
-              </p>
-              <button>
+            <!-- Project 2: Exam Portal -->
+            <div class="project-card-modern">
+              <div class="project-icon-header">
+                <div class="icon-circle">
+                  <i class="fab fa-java"></i>
+                </div>
+                <div class="icon-circle">
+                  <i class="fab fa-angular"></i>
+                </div>
+              </div>
+              <div class="project-content-modern">
+                <div class="project-category">Full-Stack Web App</div>
+                <h3>Exam Portal</h3>
+                <p>
+                  Enterprise full-stack application with Spring Boot backend + Angular
+                  frontend, featuring robust authentication, quiz management system & automated
+                  marking functionality
+                </p>
+                <div class="project-tech-tags">
+                  <span class="tech-tag-small">Spring Boot</span>
+                  <span class="tech-tag-small">Angular</span>
+                  <span class="tech-tag-small">Java</span>
+                  <span class="tech-tag-small">MySQL</span>
+                </div>
                 <a
                   href="https://github.com/charankulal/Exam-Portal"
-                  target="blank"
-                  >View source <i class="fas fa-external-link-alt"></i
-                ></a>
-              </button>
+                  target="_blank"
+                  class="project-link-modern"
+                >
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
             </div>
-          </div>
 
-          <div class="proj">
-            <img
-              src="https://github-readme-stats.vercel.app/api/pin/?username=charankulal&repo=StudentSync&theme=radical"
-              alt="StudentSync - Learning Management System"
-            />
-            <div class="proj-details">
-              <i class="fab fa-python"></i>
-              <i class="fab fa-discord"></i>
-              <h2>StudentSync - LMS Platform</h2>
-              <p>
-                Discord-inspired learning management system: Django-powered
-                platform with role-based access, real-time messaging, resource
-                sharing & academic discussion forums
-              </p>
-              <button>
+            <!-- Project 3: StudentSync -->
+            <div class="project-card-modern">
+              <div class="project-icon-header">
+                <div class="icon-circle">
+                  <i class="fab fa-python"></i>
+                </div>
+                <div class="icon-circle">
+                  <i class="fab fa-discord"></i>
+                </div>
+              </div>
+              <div class="project-content-modern">
+                <div class="project-category">Django Web Platform</div>
+                <h3>StudentSync - LMS Platform</h3>
+                <p>
+                  Discord-inspired learning management system built with Django,
+                  featuring role-based access control, real-time messaging, resource
+                  sharing & academic discussion forums
+                </p>
+                <div class="project-tech-tags">
+                  <span class="tech-tag-small">Django</span>
+                  <span class="tech-tag-small">Python</span>
+                  <span class="tech-tag-small">PostgreSQL</span>
+                  <span class="tech-tag-small">WebSocket</span>
+                </div>
                 <a
                   href="https://github.com/charankulal/StudentSync"
-                  target="blank"
-                  >View source <i class="fas fa-external-link-alt"></i
-                ></a>
-              </button>
+                  target="_blank"
+                  class="project-link-modern"
+                >
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 4: Hand Gesture Computer System -->
+            <div class="project-card-modern">
+              <div class="project-icon-header">
+                <div class="icon-circle">
+                  <i class="fas fa-hand-paper"></i>
+                </div>
+                <div class="icon-circle">
+                  <i class="fab fa-python"></i>
+                </div>
+              </div>
+              <div class="project-content-modern">
+                <div class="project-category">Computer Vision</div>
+                <h3>Hand Gesture Computer System</h3>
+                <p>
+                  Innovative computer vision application enabling touchless computer control
+                  through hand gestures. Features real-time gesture recognition using MediaPipe
+                  for cursor movement, clicking, and system control
+                </p>
+                <div class="project-tech-tags">
+                  <span class="tech-tag-small">Python</span>
+                  <span class="tech-tag-small">OpenCV</span>
+                  <span class="tech-tag-small">MediaPipe</span>
+                  <span class="tech-tag-small">Computer Vision</span>
+                </div>
+                <a
+                  href="https://github.com/charankulal/Hand-gesture-computer-system"
+                  target="_blank"
+                  class="project-link-modern"
+                >
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
             </div>
           </div>
 
-          <div class="more-proj">
-            <a href="./project_page.html" class="btn btn-primary"
-              ><span>Explore more Projects</span> &nbsp;
-              <i class="far fa-hand-point-right"></i
-            ></a>
+          <div class="portfolio-cta">
+            <a href="./project_page.html" class="btn-explore-projects">
+              <span>Explore All Projects</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -412,6 +495,5 @@
     <!-- JAVASCRIPT -->
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </body>
 </html>

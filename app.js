@@ -41,7 +41,7 @@ $(document).ready(function () {
   function animateCounters() {
     if (counterAnimated) return;
 
-    $(".stat-number").each(function () {
+    $(".stat-number, .stat-value").each(function () {
       const $this = $(this);
       const target = parseInt($this.attr("data-target"));
 
@@ -56,7 +56,7 @@ $(document).ready(function () {
         const counter = setInterval(function () {
           current += increment;
           if (current >= target) {
-            $this.text(target);
+            $this.text(target + "+");
             clearInterval(counter);
           } else {
             $this.text(Math.floor(current));
@@ -70,7 +70,7 @@ $(document).ready(function () {
 
   // Check if stats section is in viewport
   function checkStatsInView() {
-    const statsSection = $(".achievements-stats-container");
+    const statsSection = $(".achievements-modern-section");
     if (statsSection.length) {
       const elementTop = statsSection.offset().top;
       const elementBottom = elementTop + statsSection.outerHeight();
@@ -119,15 +119,75 @@ $(document).ready(function () {
   });
 });
 
-const typed = new Typed(".text", {
-  strings: [
-    "Junior QA Tester @ EG India",
-    "Software Engineer",
-    "ISTQB® Certified Tester",
-    "AI Enthusiast",
-  ],
-  typeSpeed: 100,
-  backSpeed: 50,
-  backDelay: 1000,
-  loop: true
+// Typed.js initialization (only if .text element exists)
+if (document.querySelector(".text")) {
+  const typed = new Typed(".text", {
+    strings: [
+      "Junior QA Tester @ EG India",
+      "Software Engineer",
+      "ISTQB® Certified Tester",
+      "AI Enthusiast",
+    ],
+    typeSpeed: 100,
+    backSpeed: 50,
+    backDelay: 1000,
+    loop: true
+  });
+}
+
+// Dark Mode Toggle Functionality
+$(document).ready(function () {
+  const themeToggle = $("#themeToggle");
+  const body = $("body");
+  const icon = themeToggle.find("i");
+
+  // Check for saved theme preference or default to light mode
+  const currentTheme = localStorage.getItem("theme") || "light";
+
+  if (currentTheme === "dark") {
+    body.addClass("dark-mode");
+    icon.removeClass("fa-moon").addClass("fa-sun");
+  }
+
+  // Toggle theme on button click
+  themeToggle.on("click", function () {
+    body.toggleClass("dark-mode");
+
+    if (body.hasClass("dark-mode")) {
+      icon.removeClass("fa-moon").addClass("fa-sun");
+      localStorage.setItem("theme", "dark");
+    } else {
+      icon.removeClass("fa-sun").addClass("fa-moon");
+      localStorage.setItem("theme", "light");
+    }
+  });
+
+  // Mobile Menu Toggle
+  const mobileMenuToggle = $("#mobileMenuToggle");
+  const navbarRight = $(".navbar-right");
+
+  mobileMenuToggle.on("click", function () {
+    $(this).toggleClass("active");
+    navbarRight.toggleClass("active");
+    $("body").toggleClass("menu-open");
+  });
+
+  // Close mobile menu when clicking on a link
+  $(".menu-items a").on("click", function () {
+    mobileMenuToggle.removeClass("active");
+    navbarRight.removeClass("active");
+    $("body").removeClass("menu-open");
+  });
+
+  // Close mobile menu when clicking outside
+  $(document).on("click", function (event) {
+    if (
+      !$(event.target).closest(".navbar-container").length &&
+      navbarRight.hasClass("active")
+    ) {
+      mobileMenuToggle.removeClass("active");
+      navbarRight.removeClass("active");
+      $("body").removeClass("menu-open");
+    }
+  });
 });
