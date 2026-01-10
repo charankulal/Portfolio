@@ -3734,3 +3734,303 @@ a {
     padding: 0.5rem 0.75rem;
   }
 }
+
+/* ========================================
+   WORKSHOPS & SESSIONS SECTION
+   ======================================== */
+
+.workshops-sessions-section {
+  width: 100%;
+  margin: 4rem 0 3rem 0;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px var(--shadow-color);
+}
+
+.section-title-ws {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.section-title-ws::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+  border-radius: 2px;
+}
+
+.section-subtitle-ws {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+.workshops-container,
+.sessions-container {
+  margin: 3rem 0;
+  padding: 0 2rem;
+}
+
+.subsection-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.subsection-title i {
+  color: var(--primary-color);
+  font-size: 1.6rem;
+}
+
+/* Workshops Grid (Videos) */
+.workshops-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.workshop-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--card-border);
+}
+
+.workshop-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px var(--shadow-hover);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background: var(--secondary-color);
+  overflow: hidden;
+}
+
+.video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+.workshop-info {
+  padding: 1.5rem;
+}
+
+.workshop-info h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.8rem;
+}
+
+.workshop-info p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Sessions Grid (Photos) */
+.sessions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.session-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--card-border);
+  cursor: pointer;
+}
+
+.session-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px var(--shadow-hover);
+}
+
+.session-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* 4:3 Aspect Ratio for photos */
+  overflow: hidden;
+  background: var(--secondary-color);
+}
+
+.session-image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.session-card:hover .session-image-wrapper img {
+  transform: scale(1.1);
+}
+
+.session-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(37, 183, 159, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.session-card:hover .session-overlay {
+  opacity: 1;
+}
+
+.session-overlay i {
+  font-size: 3rem;
+  color: white;
+  animation: zoomPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes zoomPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.session-info {
+  padding: 1.5rem;
+}
+
+.session-info h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.8rem;
+}
+
+.session-info p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.session-info p i {
+  color: var(--primary-color);
+  margin-right: 0.3rem;
+}
+
+/* Responsive Design for Workshops & Sessions */
+@media (max-width: 768px) {
+  .workshops-sessions-section {
+    margin: 3rem 0 2rem 0;
+    padding: 2rem 0;
+  }
+
+  .section-title-ws {
+    font-size: 2rem;
+  }
+
+  .section-subtitle-ws {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .workshops-container,
+  .sessions-container {
+    padding: 0 1rem;
+  }
+
+  .subsection-title {
+    font-size: 1.5rem;
+  }
+
+  .workshops-grid,
+  .sessions-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .workshop-info h4,
+  .session-info h4 {
+    font-size: 1.1rem;
+  }
+
+  .workshop-info p,
+  .session-info p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .workshops-sessions-section {
+    border-radius: 10px;
+    margin: 2rem 0;
+    padding: 1.5rem 0;
+  }
+
+  .section-title-ws {
+    font-size: 1.6rem;
+  }
+
+  .section-subtitle-ws {
+    font-size: 0.9rem;
+  }
+
+  .subsection-title {
+    font-size: 1.3rem;
+  }
+
+  .workshops-container,
+  .sessions-container {
+    margin: 2rem 0;
+  }
+
+  .workshop-info,
+  .session-info {
+    padding: 1rem;
+  }
+
+  .session-overlay i {
+    font-size: 2.5rem;
+  }
+}
